@@ -1,0 +1,23 @@
+# Renomme ce fichier en ci.yml et place-le dans .github/workflows/
+
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Télécharger le code
+              uses: actions/checkout@v6.0.2
+
+            - name: Installer uv
+              uses: astral-sh/setup-uv@v8.0.0
+
+            - name: Lancer les tests
+              run: # TODO : quelle commande lance les tests ?
