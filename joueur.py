@@ -1,11 +1,14 @@
 class Joueur:
     """Représente un joueur dans un tournoi."""
 
+    nom: str
+    score: int
+
     def __init__(self, nom: str) -> None:
         if not nom or not nom.strip():
             raise ValueError("Le nom du joueur ne peut pas être vide.")
-        self.nom = nom.strip()
-        self.score = 0
+        self.nom: str = nom.strip()
+        self.score: int = 0
 
     def gagner(self) -> None:
         """Incrémente le score du joueur de 1."""

@@ -6,11 +6,15 @@ from joueur import Joueur
 class Match:
     """Représente un match entre deux joueurs."""
 
+    joueur1: Joueur
+    joueur2: Joueur
+    gagnant: Joueur | None
+
     def __init__(self, joueur1: Joueur, joueur2: Joueur) -> None:
         # TODO : vérifier que joueur1 et joueur2 sont différents
         self.joueur1 = joueur1
         self.joueur2 = joueur2
-        self.gagnant: Joueur | None = None
+        self.gagnant = None
 
     def jouer(self) -> Joueur:
         """Simule le match et désigne un gagnant aléatoirement."""
@@ -19,5 +23,3 @@ class Match:
         # TODO : incrémenter le score du gagnant
         # TODO : retourner le gagnant
         raise NotImplementedError
-
-

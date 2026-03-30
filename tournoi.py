@@ -7,11 +7,15 @@ from match import Match
 class Tournoi:
     """Représente un tournoi à élimination directe."""
 
+    joueurs: list[Joueur]
+    matchs: list[Match]
+    tour_actuel: int
+
     def __init__(self, joueurs: list[Joueur]) -> None:
         # TODO : vérifier qu'il y a au moins 2 joueurs
-        self.joueurs: list[Joueur] = list(joueurs)
-        self.matchs: list[Match] = []
-        self.tour_actuel: int = 0
+        self.joueurs = list(joueurs)
+        self.matchs = []
+        self.tour_actuel = 0
 
     def tour_suivant(self) -> list[Match]:
         """Joue un tour : chaque paire de joueurs restants s'affronte."""
